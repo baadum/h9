@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+<script>
+// Вам нужно, написать функцию, которая принимает 1 параметр. При первом вызове, она его запоминает,
+// при втором — суммирует переданый параметр с тем, что передали первый раз и тд. Всё это с замыканиями,
+// например: sum(3) = 3 sum(5) = 8 sum(20) = 28
+
+// Это не все. Возьмите счетчик, который мы писали в классе и добавьте ему возможность задавать начальное значение и шаг счетчика.
+
+
+// 1
+function remNumb(num) {
+    var x = num
+    return function(param) {
+        x += param
+        return x
+    }
+
+};
+
+var sum = remNumb(0)
+console.log(sum(3));
+console.log(sum(5));
+console.log(sum(20));
+    
+// 2
+
+
+function counter(num) {
+    return function(step){
+        return num + step;
+    }
+}
+
+var counterOne = counter(5)
+console.log(counterOne(9)); 
+console.log(counterOne(2)); 
+</script>
+</body>
+</html>
